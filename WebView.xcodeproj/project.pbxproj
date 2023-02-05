@@ -11,6 +11,9 @@
 		CFD1B3AE298BBD3B00167A80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1B3AD298BBD3B00167A80 /* ContentView.swift */; };
 		CFD1B3B0298BBD3E00167A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD1B3AF298BBD3E00167A80 /* Assets.xcassets */; };
 		CFD1B3B3298BBD3E00167A80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD1B3B2298BBD3E00167A80 /* Preview Assets.xcassets */; };
+		CFD1B3BB298BBE3900167A80 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD1B3BA298BBE3900167A80 /* SafariServices.framework */; };
+		CFD1B3BD298BC08600167A80 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1B3BC298BC08600167A80 /* SafariView.swift */; };
+		CFD1B3BF298BC30300167A80 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1B3BE298BC30300167A80 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		CFD1B3AD298BBD3B00167A80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CFD1B3AF298BBD3E00167A80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD1B3B2298BBD3E00167A80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CFD1B3BA298BBE3900167A80 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CFD1B3BC298BC08600167A80 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		CFD1B3BE298BC30300167A80 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD1B3BB298BBE3900167A80 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +44,7 @@
 			children = (
 				CFD1B3AA298BBD3B00167A80 /* WebView */,
 				CFD1B3A9298BBD3B00167A80 /* Products */,
+				CFD1B3B9298BBE3900167A80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +61,8 @@
 			children = (
 				CFD1B3AB298BBD3B00167A80 /* WebViewApp.swift */,
 				CFD1B3AD298BBD3B00167A80 /* ContentView.swift */,
+				CFD1B3BC298BC08600167A80 /* SafariView.swift */,
+				CFD1B3BE298BC30300167A80 /* Enums.swift */,
 				CFD1B3AF298BBD3E00167A80 /* Assets.xcassets */,
 				CFD1B3B1298BBD3E00167A80 /* Preview Content */,
 			);
@@ -65,6 +75,14 @@
 				CFD1B3B2298BBD3E00167A80 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CFD1B3B9298BBE3900167A80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFD1B3BA298BBE3900167A80 /* SafariServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD1B3AE298BBD3B00167A80 /* ContentView.swift in Sources */,
+				CFD1B3BD298BC08600167A80 /* SafariView.swift in Sources */,
+				CFD1B3BF298BC30300167A80 /* Enums.swift in Sources */,
 				CFD1B3AC298BBD3B00167A80 /* WebViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
