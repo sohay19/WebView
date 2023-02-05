@@ -7,56 +7,120 @@
 
 import SwiftUI
 import SafariServices
+import WebKit
 
 struct ContentView: View {
-    @State private var isShow = false
+    @State private var isSafariShow = false
+    @State private var isWebShow = false
     @State private var targetUrl:URL?
     
     var body: some View {
         NavigationStack {
-            Button {
-                setUrl(.Naver)
-            } label: {
-                Text("네이버 열기")
-            }
-            .navigationDestination(isPresented: $isShow) {
-                if let targetUrl = targetUrl {
-                    SafariView(url: targetUrl)
+            VStack {
+                Text("Safari로 열기")
+                    .padding()
+                    .background(.black)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .cornerRadius(10)
+                
+                Button {
+                    setSafariUrl(.Naver)
+                } label: {
+                    Text("네이버 열기")
                 }
+                .navigationDestination(isPresented: $isSafariShow) {
+                    if let targetUrl = targetUrl {
+                        SafariView(url: targetUrl)
+                    }
+                }
+                .padding()
+                
+                Button {
+                    setSafariUrl(.Google)
+                } label: {
+                    Text("구글 열기")
+                }
+                .navigationDestination(isPresented: $isSafariShow) {
+                    if let targetUrl = targetUrl {
+                        SafariView(url: targetUrl)
+                    }
+                }
+                .padding()
+                
+                Button {
+                    setSafariUrl(.Tistory)
+                } label: {
+                    Text("티스토리 열기")
+                }
+                .navigationDestination(isPresented: $isSafariShow) {
+                    if let targetUrl = targetUrl {
+                        SafariView(url: targetUrl)
+                    }
+                }
+                .padding()
             }
-            .padding()
+            .padding(60)
             
-            Button {
-                setUrl(.Google)
-            } label: {
-                Text("구글 열기")
-            }
-            .navigationDestination(isPresented: $isShow) {
-                if let targetUrl = targetUrl {
-                    SafariView(url: targetUrl)
+            VStack {
+                Text("WebView로 열기")
+                    .padding()
+                    .background(.black)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .cornerRadius(10)
+                
+                Button {
+                    setWebUrl(.Naver)
+                } label: {
+                    Text("네이버 열기")
                 }
-            }
-            .padding()
-            
-            Button {
-                setUrl(.Tistory)
-            } label: {
-                Text("티스토리 열기")
-            }
-            .navigationDestination(isPresented: $isShow) {
-                if let targetUrl = targetUrl {
-                    SafariView(url: targetUrl)
+                .navigationDestination(isPresented: $isWebShow) {
+                    if let targetUrl = targetUrl {
+                        WebView(url: targetUrl)
+                    }
                 }
+                .padding()
+                
+                Button {
+                    setWebUrl(.Google)
+                } label: {
+                    Text("구글 열기")
+                }
+                .navigationDestination(isPresented: $isWebShow) {
+                    if let targetUrl = targetUrl {
+                        WebView(url: targetUrl)
+                    }
+                }
+                .padding()
+                
+                Button {
+                    setWebUrl(.Tistory)
+                } label: {
+                    Text("티스토리 열기")
+                }
+                .navigationDestination(isPresented: $isWebShow) {
+                    if let targetUrl = targetUrl {
+                        WebView(url: targetUrl)
+                    }
+                }
+                .padding()
             }
-            .padding()
         }
     }
     
-    // 열릴 페이지 설정
-    func setUrl(_ pageType:Page) {
+    // Safari로 열릴 페이지 설정
+    func setSafariUrl(_ pageType:Page) {
         guard let url = URL(string: pageType.rawValue) else { return }
         targetUrl = url
-        isShow.toggle()
+        isSafariShow.toggle()
+    }
+    
+    // Web으로 열릴 페이지 설정
+    func setWebUrl(_ pageType:Page) {
+        guard let url = URL(string: pageType.rawValue) else { return }
+        targetUrl = url
+        isWebShow.toggle()
     }
 }
 

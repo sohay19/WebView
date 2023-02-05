@@ -38,3 +38,10 @@ struct SafariView: UIViewControllerRepresentable {
         uiViewController.openUrl(url)
     }
 }
+
+
+struct SafariView_Previews: PreviewProvider {
+    static var previews: some View {
+        SafariView(url: URL(string: "http://www.naver.com")!)
+    }
+}
