@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import SafariServices
-import WebKit
 
 struct ContentView: View {
     // Safari 열림 체크
