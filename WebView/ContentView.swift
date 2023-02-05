@@ -10,12 +10,16 @@ import SafariServices
 import WebKit
 
 struct ContentView: View {
+    // Safari 열림 체크
     @State private var isSafariShow = false
+    // WebView 열림 체크
     @State private var isWebShow = false
+    // 열릴 URL
     @State private var targetUrl:URL?
     
     var body: some View {
         NavigationStack {
+            // Safari
             VStack {
                 Text("Safari로 열기")
                     .padding()
@@ -62,6 +66,7 @@ struct ContentView: View {
             }
             .padding(60)
             
+            //WebView
             VStack {
                 Text("WebView로 열기")
                     .padding()
